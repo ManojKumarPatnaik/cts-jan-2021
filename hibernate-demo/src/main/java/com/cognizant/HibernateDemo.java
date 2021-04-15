@@ -19,9 +19,9 @@ public class HibernateDemo {
 		Session session = factory.openSession();
 		
 		Employee employee = new Employee();
-		employee.setEmpId(200);
-		employee.setName("Bruce");
-		employee.setSalary(34200);
+		employee.setEmpId(500);
+		employee.setName("Edward");
+		employee.setSalary(74200);
 		
 		// 4th step is to save the object but you must begin the transaction
 		Transaction tx = session.beginTransaction();

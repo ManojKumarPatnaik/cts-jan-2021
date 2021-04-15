@@ -6,6 +6,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
 
 public class HibernateCriteriaDemo {
 	public static void main(String[] args) {
@@ -20,6 +21,7 @@ public class HibernateCriteriaDemo {
 		Session session = factory.openSession();
 		
 		Criteria crt = session.createCriteria(Employee.class);
+		crt.add(Restrictions.lt("salary", 40000.0)); // 40000.0 -> Double -> double
 		// it gets all the records and adds them in the Collection List
 		List<Employee> list =  crt.list();
 		for(Employee e : list) {
