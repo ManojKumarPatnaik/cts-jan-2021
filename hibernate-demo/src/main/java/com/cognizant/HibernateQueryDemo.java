@@ -29,6 +29,7 @@ public class HibernateQueryDemo {
 			Object[] props = (Object[])obj;
 			System.out.println("Id = "+props[0]+", Name = "+props[1]);
 		}
+		
 		session.close();
 		factory.close();
 	}
