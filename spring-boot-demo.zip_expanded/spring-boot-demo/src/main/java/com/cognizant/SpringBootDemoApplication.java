@@ -19,7 +19,7 @@ public class SpringBootDemoApplication {
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {
 			EmployeeService service = ctx.getBean(EmployeeService.class);
-			
+			service.fetchAllEmployees().forEach(item -> System.out.println(item));
 		};
 	}
 
