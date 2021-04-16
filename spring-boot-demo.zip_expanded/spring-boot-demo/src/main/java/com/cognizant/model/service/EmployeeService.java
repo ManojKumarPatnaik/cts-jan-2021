@@ -1,14 +1,15 @@
 package com.cognizant.model.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.cognizant.model.dao.EmployeeRepository;
 
 @Service
 public class EmployeeService {
 
-	public void testEmp() {
-		System.out.println("testEmp() inside EmployeeService");
-	}
-	public void testAnotherEmp() {
-		System.out.println("testAnotherEmp() inside EmployeeService");
-	}
+	@Autowired
+	private EmployeeRepository dao;
+	
+	
 }
