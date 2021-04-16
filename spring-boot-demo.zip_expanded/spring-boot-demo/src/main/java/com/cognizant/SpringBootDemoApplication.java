@@ -21,12 +21,13 @@ public class SpringBootDemoApplication {
 		return args -> {
 			EmployeeService service = ctx.getBean(EmployeeService.class);
 			
-			Employee emp = new Employee();
-			emp.setEmpId(700);
-			emp.setName("George");
-			emp.setSalary(29000);
-			Employee created = service.storeEmployee(emp);
-			System.out.println(created);
+//			Employee emp = new Employee();
+//			emp.setEmpId(700);
+//			emp.setName("George");
+//			emp.setSalary(29000);
+//			Employee created = service.storeEmployee(emp);
+//			System.out.println(created);
+			service.modifyEmployeesSalary(75000);
 			service.fetchAllEmployees().forEach(item -> System.out.println(item));
 		};
 	}
