@@ -18,4 +18,8 @@ public class EmployeeService {
 		List<Employee> employees = dao.findAll();
 		return employees;
 	}
+	
+	public Employee storeEmployee(Employee employee) {
+		return dao.save(employee);
+	}
 }
