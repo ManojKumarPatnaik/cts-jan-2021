@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is my first html page</h1>
+    <div id = "d1"></div>
+    <button onclick="demo()">Click</button>
+    <script>
+        function demo() {
+            var ele = document.getElementById("d1");
+            var id = 102;
+            var name = "Bruce";
+            var age = 32;
+            // var content = "<table border = '1'><tr><th>Id</th><th>Name</th><th>Age</th></tr>";
+            // content = content + "<tr><td>"+id+"</td><td>"+name+"</td><td>"+age+
+            //     "</td></tr></table>"
+            var content = `<table border = "1">
+                <tr><th>Id</th><th>Name</th><th>Age</th></tr>
+                <tr><td>${id}</td><td>${name}</td><td>${age}</td></tr></table>
+                `;
+            ele.innerHTML = content;
+        }
+    </script>
+</body>
+</html>

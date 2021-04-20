@@ -11,10 +11,11 @@ import lombok.NonNull;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+@EqualsAndHashCode 
 public class Users {
 	private int userId;
 	@NonNull
 	private String name;
+
 	private LocalDate dob;
 }
