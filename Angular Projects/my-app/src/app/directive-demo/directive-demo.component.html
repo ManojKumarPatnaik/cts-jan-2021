@@ -1,0 +1,20 @@
+<div>
+    <h3>ngFor on names</h3>
+    <ol>
+        <li *ngFor = "let n of names">{{n}}</li>
+    </ol>
+    <hr />
+    <h3>ngFor on users</h3>
+    
+    <ol>
+        <li *ngFor = "let u of users">
+            Hello {{u.name}}, your age is {{u.age}}
+        </li>
+    </ol>
+    <hr />
+    <h3>ngIf on x: {{x}}, y: {{y}}, z: {{z}} and z1: {{z1}}</h3>
+    <p *ngIf = "x">Hello World x</p> 
+    <p *ngIf = "y">Hello World y</p> 
+    <p *ngIf = "z">Hello World z</p>
+    <p *ngIf = "z1">Hello World z1</p>
+</div>

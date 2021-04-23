@@ -1,0 +1,11 @@
+<div>
+    <h3>Hello {{name}}, your dob is: {{dob}} and salary is : {{salary}}</h3>
+    <hr />
+    <h3>Hello {{name | uppercase}}</h3>
+    <h3>Dob: {{dob | date}}</h3>
+    <h3>Dob in dd/MM/yy format: {{dob | date : 'dd-MM-yy'}}</h3>
+    <h3>Dob in dd/MMM/yyyy format: {{dob | date : 'dd-MMM-yyyy'}}</h3>
+    <h3>Salary: {{salary | currency}}</h3>
+    <h3>Salary in INR: {{salary | currency : 'INR'}}</h3>
+    <h3>Salary in JPY: {{salary | currency : 'JPY'}}</h3>
+</div>
