@@ -1,1 +1,18 @@
-<p>mdf-demo works!</p>
+<div>
+    <h2>MDF Demo!</h2>
+    <form [formGroup] = "user" (ngSubmit) = "handleSubmit()">
+        <label>
+            Firstname <input type = "text" formControlName = "firstname">
+        </label>
+        <br />
+        <label>
+            Lastname <input type = "text" formControlName = "lastname">
+        </label>
+        <br />
+        <input type = "submit" value = "submit" [disabled] = "user.invalid">
+    </form>
+    <div>
+        Values : {{user.value | json}}<br />
+        Valid: {{user.valid}}
+    </div>
+</div>
