@@ -1,0 +1,8 @@
+<div>
+    <h2>Event Binding Demo!</h2>
+    <hr />
+    <input type = "text" name = "user" #n>
+    <button (click) = "handleClick(n.value)">Click</button>
+    <br />
+    <p *ngIf = "name">Name is: {{name}}</p>
+</div>
