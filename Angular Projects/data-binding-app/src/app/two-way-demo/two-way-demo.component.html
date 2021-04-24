@@ -1,0 +1,21 @@
+<div>
+    <h2>Two way data binding demo!</h2>
+    <form #loginForm = "ngForm" 
+        (ngSubmit) = "handleSubmit(loginForm.value)">
+        <label>
+            Username <input type = "text" name = "un" [(ngModel)] = "user">
+        </label>
+        <br />
+        <label>
+            Password: <input type = "password" name = "pw" [(ngModel)] = "pass">
+        </label>
+        <br />
+        <input type = "submit" value = "Login">
+    </form>
+    <div>
+        Form data: {{loginForm.value | json}} <br />
+        User: {{user}} and Password: {{pass}}
+        <input type = "text" [(ngModel)] = "user">
+    </div>
+</div>
+

@@ -3,4 +3,6 @@
     <button (click) = "toggleButton()">Click Here</button>
     <button [disabled] = "status">Toggle</button>
     <p>Status : {{status}}</p>
+    <p>Hidden: <span [hidden] = "status">is used</span></p>
+    <p>NgIf: <span *ngIf = "status">is used</span></p>
 </div>

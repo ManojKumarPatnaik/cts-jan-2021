@@ -1,0 +1,28 @@
+<div>
+    <h2>Template Driven Form</h2>
+    <div class = "form-group">
+        <form #userForm = "ngForm" (ngSubmit) = "handleSubmit(userForm.value)">
+            <label>
+                Enter Name: <input class = "form-control" type = "text" name = "user" autocomplete="off" #tf1="ngModel" ngModel required >
+                <span class = "alert alert-danger" [hidden] = "tf1.valid || tf1.pristine">Username is mandatory</span>
+            </label>
+            <br />
+            <label>
+                Enter Password: <input class = "form-control" type = "password" name = "pass" #tf2="ngModel" ngModel  required >
+                <span class = "alert alert-danger" [hidden] = "tf2.valid || tf2.pristine">Password is mandatory</span>
+            </label>
+            <br />
+            <input class = "btn btn-primary" type = "submit" value = "Login" [disabled] = "userForm.invalid">
+        </form>
+        <div>
+            <h3>Template Reference 1</h3>
+            <p>Value: {{tf1.value}}, Valid: {{tf1.valid}}, Invalid: {{tf1.invalid}}, Pristine: {{tf1.pristine}}</p>
+            <hr />
+            <h3>Template Reference 2</h3>
+            <p>Value: {{tf2.value}}, Valid: {{tf2.valid}}, Invalid: {{tf2.invalid}}, Pristine: {{tf2.pristine}}</p>
+            <h3>Form Reference</h3>
+            <p>Form Valid: {{userForm.valid}}</p>
+        </div>
+    </div>
+
+</div>
