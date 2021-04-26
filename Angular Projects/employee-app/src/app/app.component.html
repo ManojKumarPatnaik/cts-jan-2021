@@ -1,7 +1,18 @@
-<div>
-  <h1>This is employee app</h1>
+<div class = "container-fluid">
+  <h1 class = "alert alert-primary text-center">This is employee app</h1>
   <hr />
-  <app-employee-details></app-employee-details>
-  <hr />
-  <app-user-details></app-user-details>
+  <div class = "row">
+    <div class = "col-6">
+      <app-employee-store></app-employee-store>
+    </div>
+    <div class = "col-6">
+      <app-employee-details></app-employee-details>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-6">
+      <app-emp-delete></app-emp-delete>
+    </div>
+  </div>
+  
 </div>

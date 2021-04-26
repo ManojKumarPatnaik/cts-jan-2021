@@ -1,6 +1,6 @@
 <div>
     <h2>All employee records</h2>
-    <button (click) = "fetchData()">Load</button>
+    <button (click) = "fetchData()" class = "btn btn-secondary">Load</button>
     <div *ngFor = "let e of emps">
         Id : {{e.id}}, Name : {{e.name}} and Dob: {{e.dob}}
     </div>

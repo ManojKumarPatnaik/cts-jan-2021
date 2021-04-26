@@ -1,0 +1,9 @@
+<div>
+    <h3>Delete Employee</h3>
+    <hr />
+    <input type = "number" #tf class = "form-control">
+    <button (click) = "remove(tf.value)" class = "btn btn-danger">Delete</button>
+    <div *ngIf = "message" class = "alert alert-danger">
+        {{message}}
+    </div>
+</div>

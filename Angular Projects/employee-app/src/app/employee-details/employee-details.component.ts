@@ -17,12 +17,11 @@ export class EmployeeDetailsComponent implements OnInit {
     //this.emps = this.service.fetchEmployees();
     // subscribe(success, error): it takes 2 parameters
     // success is for 200, error is for 400
-    console.log('calling fetch data');
     this.service.fetchEmployees()
-      .subscribe(
-        (success) => console.log(success), 
-        (err) => console.log(err)
-        );
+    .subscribe(
+      (success) => this.emps = success, 
+      (err) => console.log(err)
+      );
   }
 
 }
