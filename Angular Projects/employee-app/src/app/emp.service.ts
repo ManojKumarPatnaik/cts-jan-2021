@@ -9,8 +9,11 @@ export class EmpService {
 
   constructor(private http : HttpClient) { }
 
-  fetchEmployees() : any {
-    return employees;
+  fetchEmployees() : Observable<any> {
+    let uri = "http://localhost:3000/employees";
+    //return employees;
+    return this.http.get(uri);
+
   }
 
   fetchUsers() : Observable<any> {

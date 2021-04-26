@@ -14,7 +14,15 @@ export class EmployeeDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
   fetchData() : void {
-    this.emps = this.service.fetchEmployees();
+    //this.emps = this.service.fetchEmployees();
+    // subscribe(success, error): it takes 2 parameters
+    // success is for 200, error is for 400
+    console.log('calling fetch data');
+    this.service.fetchEmployees()
+      .subscribe(
+        (success) => console.log(success), 
+        (err) => console.log(err)
+        );
   }
 
 }
