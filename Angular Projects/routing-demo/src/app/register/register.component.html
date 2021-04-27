@@ -1,17 +1,21 @@
 <div>
     <h3>Registration Form</h3>
     <hr />
-    <form>
+    <form [formGroup] = "userForm" (ngSubmit) = "store()">
         <label>
-            Firstname <input type = "text">
+            Id <input type = "number" formControlName = "id">
         </label>
         <br />
         <label>
-            Lastname <input type = "text">
+            Name <input type = "text" formControlName = "name">
         </label>
         <br />
         <label>
-            Password <input type = "password">
+            Phone <input type = "text" formControlName = "phone">
+        </label>
+        <br />
+        <label>
+            dob <input type = "date" formControlName = "dob">
         </label>
         <br />
         <input type = "submit" value = "Register">

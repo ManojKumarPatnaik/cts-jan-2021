@@ -1,16 +1,16 @@
 <div>
     <h3>Login Form</h3>
     <hr />
-    <form>
+    <form [formGroup] = "loginForm" (ngSubmit) = "authenticate()">
         <label>
-            Username <input type = "text">
+            Id <input type = "number" formControlName = "id">
         </label>
         <br />
         <label>
-            Password <input type = "password">
+            Password <input type = "text" formControlName = "password">
         </label>
-        <br />
-        <input type = "submit" value = "Login">
+        <br /> 
+        <input type = "submit" value = "Login" class = "btn btn-primary">
     </form>
     <a routerLink = "/register">Create Account</a>
 </div>

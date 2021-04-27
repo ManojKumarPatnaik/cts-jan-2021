@@ -9,7 +9,8 @@ import { StoreUsersComponent } from './store-users/store-users.component';
 import { UpdateUsersComponent } from './update-users/update-users.component';
 import { UsersDetailsComponent } from './users-details/users-details.component';
 import { SuccessComponent } from './success/success.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,9 @@ import { SuccessComponent } from './success/success.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
