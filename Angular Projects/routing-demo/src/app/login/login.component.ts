@@ -19,12 +19,14 @@ export class LoginComponent implements OnInit {
     id : [], password : []
   });
   ngOnInit(): void {
+    sessionStorage.clear();
   }
   authenticate() : void {
     let id = this.loginForm.value.id;
     if(this.loginForm.value.password == 'Admin') {
-      this.service.login(id).subscribe(
+      this.service.fetch(id).subscribe(
         success => {
+          sessionStorage.setItem('userKey', id);
           this.router.navigate(["/success", id]);
         }, err => {
           alert('Invalid Credentials');

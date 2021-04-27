@@ -13,7 +13,7 @@ export class UsersService {
     return this.httpClient.post(this.baseUri, userForm);
   }
 
-  login(id : number) : Observable<any> {
+  fetch(id : number) : Observable<any> {
     return this.httpClient.get(`${this.baseUri}/${id}`);
   }
 

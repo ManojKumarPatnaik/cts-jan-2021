@@ -1,1 +1,7 @@
-<p>success works!</p>
+<div>
+    <h2>User Profile</h2><hr />
+    <div *ngIf = "user">
+        <h3>Hello {{user.name}}, your id is {{user.id}}</h3>
+        <h3>Phone: {{user.phone}} and Birthday: {{user.dob}}</h3>
+    </div>
+</div>
