@@ -1,0 +1,11 @@
+<div>
+    <h2>This is product list component which is parent</h2>
+    <h3>Parent Counter: {{ parentCounter }}</h3>
+    <hr />
+    
+    <div *ngFor = "let p of productsList">
+        <app-product-item 
+        [product] = "p" (eventEmitter) = "takeAllClicks($event)"></app-product-item>
+    </div>
+   
+</div>
