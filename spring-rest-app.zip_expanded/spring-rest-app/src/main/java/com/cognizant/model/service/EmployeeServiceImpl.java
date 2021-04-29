@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cognizant.exceptions.EmployeeNotFoundException;
 import com.cognizant.model.dao.EmployeeRepository;
 import com.cognizant.model.entities.Employee;
 
@@ -26,9 +27,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Employee fetchEmployee(int id) {
-		Employee employee = employeeDao.findById(id).get();
-		return employee;
+	public Employee fetchEmployee(int id) throws EmployeeNotFoundException {
+		if(employeeDao.findById(id).isPresent()) {
+			Employee employee = employeeDao.findById(id).get();
+			return employee;
+		}
+		throw new EmployeeNotFoundException("Sorry employee with an id "+id+" not found!");
+		
 	}
 	
 }
