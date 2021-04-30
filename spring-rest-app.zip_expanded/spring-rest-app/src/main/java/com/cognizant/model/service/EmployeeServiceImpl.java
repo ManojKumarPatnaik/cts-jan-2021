@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cognizant.exceptions.EmployeeNotFoundException;
 import com.cognizant.model.dao.EmployeeRepository;
@@ -34,6 +35,22 @@ public class EmployeeServiceImpl implements EmployeeService {
 		}
 		throw new EmployeeNotFoundException("Sorry employee with an id "+id+" not found!");
 		
+	}
+
+	@Override
+	@Transactional
+	public Employee updateSalary(int id, double salary) throws EmployeeNotFoundException {
+		Employee emp = fetchEmployee(id);
+		emp.setSalary(salary);
+		employeeDao.save(emp);
+		return emp;
+	}
+
+	@Override
+	@Transactional
+	public void deleteEmployee(int id) throws EmployeeNotFoundException {
+		Employee emp = fetchEmployee(id);
+		employeeDao.delete(emp);
 	}
 	
 }
