@@ -2,9 +2,12 @@ package com.cognizant.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +23,7 @@ import com.cognizant.model.service.EmployeeService;
 
 @RestController
 @RequestMapping("api")
+@CrossOrigin(origins = "*")
 public class RestApi {
 
 	@Autowired
@@ -28,7 +32,7 @@ public class RestApi {
 	@PostMapping(path = "employees", 
 			consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, 
 			produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-	public ResponseEntity<Object> storeApi(@RequestBody Employee emp) {
+	public ResponseEntity<Object> storeApi(@Valid @RequestBody Employee emp) {
 		Employee createdEmployee = service.saveEmployee(emp);
 		ResponseEntity<Object> responseEntity = ResponseEntity.status(201).body(createdEmployee);
 		return responseEntity;

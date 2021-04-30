@@ -1,0 +1,13 @@
+<div>
+    <h3>Search Employee by id</h3>
+    Enter id<input type = "number" #tf >
+    <input type = "button" value = "Search" 
+    (click) = "searchEmployee(tf.value)">
+    <div *ngIf = "employee">
+        {{employee | json}}
+    </div>
+    <div *ngIf = "message">
+        {{message}}
+    </div>
+</div>
+

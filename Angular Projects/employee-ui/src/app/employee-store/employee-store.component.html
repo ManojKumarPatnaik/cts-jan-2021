@@ -1,0 +1,13 @@
+<div>
+    <h3>Employee Form</h3><hr />
+    <form [formGroup] = "employeeForm" (ngSubmit) = "handleSubmit()">
+       Name: <input type = "text" formControlName = "name">
+       <br />
+       Salary : <input type = "text" formControlName = "salary">
+       <br />
+       <input type = "submit" value = "Store">
+    </form>
+    <div *ngIf = "employee">
+        {{employee | json}}
+    </div>
+</div>
