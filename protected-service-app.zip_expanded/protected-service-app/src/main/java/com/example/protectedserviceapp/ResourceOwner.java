@@ -11,7 +11,7 @@ public class ResourceOwner extends ResourceServerConfigurerAdapter{
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-		.antMatchers(HttpMethod.POST, "/api/**").hasAnyRole("ADMIN", )
+		.antMatchers(HttpMethod.POST, "/api/**").hasAnyRole("ADMIN")
 		.antMatchers(HttpMethod.GET, "/api/**").hasAnyRole("USER", "ADMIN")
 		.anyRequest().authenticated();
 	}
