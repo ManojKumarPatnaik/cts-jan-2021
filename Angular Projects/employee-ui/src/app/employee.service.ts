@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 })
 export class EmployeeService {
 
-  baseUri : string = "http://localhost:8081/api";
+  baseUri : string = "http://54.209.23.89:8081/api";
 
   constructor(private httpClient : HttpClient) { }
 
@@ -15,7 +15,7 @@ export class EmployeeService {
     return this.httpClient.post(storeUri, formValues);
   }
 
-  getEmployee(id : number) : Observable<any> {
+  getEmployee(id : number | string) : Observable<any> {
     let findUri = `${this.baseUri}/employees/${id}`;
     return this.httpClient.get(findUri);
   }
