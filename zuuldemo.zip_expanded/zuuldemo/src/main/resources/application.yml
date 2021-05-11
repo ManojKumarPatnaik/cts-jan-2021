@@ -1,0 +1,12 @@
+server:
+  port: 5555
+  
+eureka:  client:    register-with-eureka: true
+    fetch-registry: true
+
+# actuator endpoints to monitor all the features like health, routes, metrics
+management:  endpoints:    web:      exposure:        include: "*"
+
+zuul:  ignored-services: "*"
+  routes:    FIRST: /one/**
+    SECOND: /two/**

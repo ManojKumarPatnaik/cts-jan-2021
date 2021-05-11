@@ -10,6 +10,7 @@ public class AccountService {
 	public Account debit() {
 		Account account = new Account();
 		account.setAmount(5000);
+		System.out.println("--------------------debit() is called ------------------------");
 		return account;
 	}
 }

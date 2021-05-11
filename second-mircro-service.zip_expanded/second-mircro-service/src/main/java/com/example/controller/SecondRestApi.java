@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.example.Client;
 import com.example.beans.Account;
 import com.example.beans.Wallet;
 
@@ -18,14 +19,14 @@ public class SecondRestApi {
 	@Autowired
 	private RestTemplate template;
 	
-	@GetMapping
-	public String greetings() {
-		return "Hello Second Microservice";
-	}
-	
+	// you need to autowire the feign client
+	@Autowired
+	private Client client;
+
 	@PostMapping
 	public Wallet addAmount() {
-		Account account = template.postForObject("http://FIRST/first", null, Account.class);
+		//Account account = template.postForObject("http://FIRST/first", null, Account.class);
+		Account account = client.getAccount();
 		Wallet wallet = new Wallet();
 		wallet.setWalletNo(12345);
 		wallet.setBalance(wallet.getBalance() + account.getAmount());
